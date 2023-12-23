@@ -8,3 +8,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
+
+
+
+// import React from 'react';
+// import { createRoot } from 'react-dom/client';
+// import App from './client/App.jsx';
+// import './css/styles.css';
+// //import * as bootstrap from 'bootstrap'
+
+// const container = document.getElementById('root');
+// const root = createRoot(container);
+
+// root.render(<App tab="/"/>);
