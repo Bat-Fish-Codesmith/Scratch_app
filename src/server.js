@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const apiRouter = require('./routes/api');
 // const cookieParser = require('cookie-parser');
+
+const PORT = 3000;
 
 //require controllers
 // const sessionController = require('./controllers/sessionController');
@@ -17,24 +20,28 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cookieParser());
 
 
-app.use('/', (req, res) => {
-    return res.json('./index.html')
-})
+app.use('/', apiRouter);
 
 /**
  * 404 handler
  */
-app.use('*', (req,res) => {
-  res.status(404).send('Not Found');
+app.use('/*', (req,res) => {
+  res.status(404).send('Page Not Found');
 });
 
 /**
  * Global error handler
  */
 app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).send({ error: err });
+  const defaultErr = {
+    log: 'ERROR: Express error handler caught unknown middleware error',
+    status: 500,
+    message: { err: 'An error occurred' },
+  };
+  const errorObj = Object.assign({}, defaultErr, err);
+  console.log(errorObj.log);
+  return next({message: 'error at a global level'});
 });
 
-app.listen(3000); //listens on port 3000 -> http://localhost:3000/
+app.listen(PORT, () => console.log('=> Listening on Port: 3000')); // -> http://localhost:3000/
 
