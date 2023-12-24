@@ -18,12 +18,11 @@ const Register = (props) => {
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({username, password, name})
       };
-
       console.log('=> Login.handleSubmit: username & password: read');
       
       const reponse = await fetch('/api/register', reqOpts);
       const data = await reponse.json();
-      
+
       console.log('=> Login.handleSubmit: username & password: verified');
 
       if(data.verified) { 
