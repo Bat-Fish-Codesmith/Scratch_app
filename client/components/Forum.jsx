@@ -1,8 +1,12 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Router, redirect, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 
+=======
+import axios from 'axios';
+>>>>>>> dev
 
 const Forum = () => {
     const [messages, setMessages] = useState([]);
@@ -106,7 +110,7 @@ return (
             ) : (
             <div>
                 <p>{message.text}</p>
-                {message.image && <img src={message.image} alt="Chat" />}
+                {message.image && <img src={message.image} alt="Forum" />}
                 <button onClick={() => handleLike(message._id)}>Like</button>
                 <span>Likes: {message.likes}</span>
                 <span>Likes: 62</span>
