@@ -98,7 +98,7 @@ return (
             ) : (
             <div>
                 <p>{message.text}</p>
-                {message.image && <img src={message.image} alt="Chat" />}
+                {message.image && <img src={message.image} alt="Forum" />}
                 <button onClick={() => handleLike(message._id)}>Like</button>
                 <span>Likes: {message.likes}</span>
                 <button onClick={() => handleEdit(message._id)}>Edit</button>
