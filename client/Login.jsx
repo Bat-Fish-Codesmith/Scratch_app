@@ -25,8 +25,8 @@ const Login = (props) => {
 
       if(data.verified) { 
         console.log('=> Login.handleSubmit: home redirect initiated');
-        props.onFormSwitch('home');
-        navigate('/api/home'); 
+        props.onFormSwitch('forum');
+        navigate('/forum'); 
       }
     } catch (error) {
       console.log('ERROR: Login.handleSubmit', 'err: ', error);

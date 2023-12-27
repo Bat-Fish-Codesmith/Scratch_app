@@ -1,3 +1,9 @@
+import React from 'react';
+import { BrowserRouter, Routes, Router, redirect, useSearchParams } from 'react-router-dom';
+import axios from 'axios';
+import { useState, useEffect } from 'react'
+
+
 const Forum = () => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
@@ -80,6 +86,8 @@ const deleteMessage = async (messageId) => {
 return (
     //found something and don't know if it show go into styling or here in the top of div
     // <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
+    <BrowserRouter>
+        <Routes path="/forum" component={"./components/Forum.jsx"} />
     <div>  
     <h2>Chat</h2>
     <div>
@@ -101,6 +109,7 @@ return (
                 {message.image && <img src={message.image} alt="Chat" />}
                 <button onClick={() => handleLike(message._id)}>Like</button>
                 <span>Likes: {message.likes}</span>
+                <span>Likes: 62</span>
                 <button onClick={() => handleEdit(message._id)}>Edit</button>
                 <button onClick={() => deleteMessage(message._id)}>Delete</button>
             </div>
@@ -119,6 +128,7 @@ return (
         <button onClick={postMessage}>Send</button>
     </div>
     </div>
+    </BrowserRouter>
 );
 };
 

@@ -1,4 +1,4 @@
-const { User, db, Page } = require('../models/userModel');
+const { User, db, Page } = require('../models/fishModel.js');
 const bcrypt = require('bcrypt');
 const express = require('express');
 
@@ -29,7 +29,9 @@ userController.login = async (req, res, next) => {
   //   }
   // } catch (error) {
   //   next({ message: 'Could not verify user' });
-  // }
+  } catch (error) {
+    res.status(500).json({ message: 'login page error' });
+  }
 };
 
 userController.register = async (req, res, next) => {
@@ -84,6 +86,16 @@ userController.checkSession = (req, res, next) => {
   } else {
     return next({message: 'error at checksession'});
   }
+};
+
+userController.forum = async (req, res, next) => {
+    try {
+    console.log("=> Forum directed")
+    res.status(200);
+    return next();
+    } catch (error) {
+      next(error);
+    }
 };
 
 module.exports = userController;

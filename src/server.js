@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+//const path = require('path');
 const apiRouter = require('./routes/api');
-// const cookieParser = require('cookie-parser');
+//const cookieParser = require('cookie-parser');
 
 const PORT = 3000;
 
@@ -25,9 +25,9 @@ app.use('/', apiRouter);
 /**
  * 404 handler
  */
-app.use('/*', (req,res) => {
-  res.status(404).send('Page Not Found');
-});
+// app.use('/*', (req,res) => {
+//   res.status(404).send('Page Not Found');
+// });
 
 /**
  * Global error handler

@@ -17,6 +17,10 @@ router.post('/login', userController.login, sessionController.startSession, cook
   res.status(200).send('=> passing through router.post/login')
 );
 
+router.get('/forum', userController.forum,  (req, res) => 
+  res.status(200).redirect('../client/components/Forum.jsx') //.send('=> passing through router.post/forum')
+);
+
 //registration page verifies user to be logged in and redirects to home. 
 router.post('/register', userController.register, sessionController.isLoggedIn, (req, res) => 
   res.status(200).send('=> passing through router.post/home')
