@@ -7,7 +7,7 @@ const FishData = () => {
 
   const searchFish = async () => {
     try {
-      // whatever the api endpoint is
+      // whatever the api endpoint
       const response = await axios.get(`/api/fish?name=${fishName}`);
       setFishData(response.data);
     } catch (error) {
@@ -49,3 +49,5 @@ const FishData = () => {
 };
 
 export default FishData;
+
+
