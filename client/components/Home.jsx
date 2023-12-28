@@ -1,18 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const navigateToForum = () => {
+    navigate('/Forum'); 
+  }
+
+  const navigateToFishData = () => {
+    navigate('/FishData');
+  };
+
   return (
     <div>
       <h2>Welcome to the Fishing App!</h2>
       <p>Discover the exciting world of fishing and connect with fellow anglers.</p>
       <div>
-        <Link to="/Forum">
-          <button>Join the Chat</button>
-        </Link>
-        <Link to="/fishinfo">
-          <button>Learn about Fish</button>
-        </Link>
+      <button onClick={() => navigateToForum()}>Join the Community!</button>
+        <button onClick={() => navigateToFishData()}>Learn About Fish</button>
       </div>
     </div>
   );
