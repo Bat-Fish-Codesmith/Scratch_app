@@ -1,0 +1,58 @@
+[
+  {
+    "user_id": "user1",
+    "content": "content1",
+    "post_picture": "imgUpload1",
+    "fish_name": "nam1",
+    "max_weight": "1",
+    "max_length": "1",
+    "total_likes": "2",
+    "like_list": {
+      "userID1": "true",
+      "userID2": "false",
+      "userID3": "true"
+    }
+  },
+  {
+    "user_id": "user2",
+    "content": "content2",
+    "post_picture": "imgUpload2",
+    "fish_name": "name2",
+    "max_weight": "2",
+    "max_length": "2",
+    "total_likes": "2",
+    "like_list": {
+      "userID1": "true",
+      "userID2": "false",
+      "userID3": "true"
+    }
+  },
+  {
+    "user_id": "user3",
+    "content": "content3",
+    "post_picture": "imgUpload3",
+    "fish_name": "name3",
+    "max_weight": "3",
+    "max_length": "3",
+    "total_likes": "2",
+    "like_list": {
+      "userID1": "true",
+      "userID2": "false",
+      "userID3": "true"
+    }
+  },
+  {
+    "user_id": "user4",
+    "content": "content4",
+    "post_picture": "imgUpload4",
+    "fish_name": "name4",
+    "max_weight": "4",
+    "max_length": "4",
+    "total_likes": "2",
+    "like_list": {
+      "userID1": "true",
+      "userID2": "false",
+      "userID3": "true"
+    }
+  }
+]

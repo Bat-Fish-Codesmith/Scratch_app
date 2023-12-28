@@ -1,0 +1,50 @@
+[
+  {
+    "user_id": "user1",
+    "password": "1234",
+    "user_name": "",
+    "profile_picture": ""
+  },
+  {
+    "user_id": "user2",
+    "password": "12345",
+    "user_name": "",
+    "profile_picture": ""
+  },
+  {
+    "user_id": "user3googleoauth",
+    "password": "",
+    "user_name": "James",
+    "profile_picture": "imgaddress"
+  },
+  {
+    "user_id": "user4googleoauth",
+    "password": "",
+    "user_name": "Steve",
+    "profile_picture": "imgaddress"
+  },
+  {
+    "user_id": "user5",
+    "password": "1234",
+    "user_name": "",
+    "profile_picture": ""
+  },
+  {
+    "user_id": "user6",
+    "password": "12345",
+    "user_name": "",
+    "profile_picture": ""
+  },
+  {
+    "user_id": "user7googleoauth",
+    "password": "",
+    "user_name": "Lucas",
+    "profile_picture": "imgaddress"
+  },
+  {
+    "user_id": "user8googleoauth",
+    "password": "",
+    "user_name": "Frank",
+    "profile_picture": "imgaddress"
+  }
+]
