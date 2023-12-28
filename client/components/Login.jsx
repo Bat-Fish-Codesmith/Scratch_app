@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 //Login Page - useState Login & HTML Components
 const Login = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,8 +25,7 @@ const Login = (props) => {
 
       if(data.verified) { 
         console.log('=> Login.handleSubmit: home redirect initiated');
-        props.onFormSwitch('forum');
-        navigate('/forum'); 
+        props.onFormSwitch('register');
       }
     } catch (error) {
       console.log('ERROR: Login.handleSubmit', 'err: ', error);

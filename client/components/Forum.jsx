@@ -1,12 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
-import { BrowserRouter, Routes, Router, redirect, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useState, useEffect } from 'react'
-
-=======
-import axios from 'axios';
->>>>>>> dev
+import {BrowserRouter, router, Routes} from 'react-router-dom'
 
 const Forum = () => {
     const [messages, setMessages] = useState([]);
