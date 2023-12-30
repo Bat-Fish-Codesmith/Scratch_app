@@ -85,8 +85,6 @@ const deleteMessage = async (messageId) => {
 return (
     //found something and don't know if it show go into styling or here in the top of div
     // <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
-    <BrowserRouter>
-        <Routes path="/forum" component={"./components/Forum.jsx"} />
     <div>  
     <h2>Chat</h2>
     <div>
@@ -127,7 +125,6 @@ return (
         <button onClick={postMessage}>Send</button>
     </div>
     </div>
-    </BrowserRouter>
 );
 };
 
