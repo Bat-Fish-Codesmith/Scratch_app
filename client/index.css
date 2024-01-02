@@ -16,7 +16,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: navy;
   text-decoration: inherit;
 }
 a:hover {
@@ -26,7 +26,7 @@ a:hover {
 body {
   padding: 0;
   margin: 0;
-  display: flex;
+  /* display: flex; */
   /* place-items: center; */
   /* min-width: 320px; */
   /* min-height: 100vh; */
@@ -77,11 +77,86 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   gap: 70px;
-  background-color: lightgray;
+  background-color: rgb(214, 221, 232);
   margin-top: 0;
+  filter: drop-shadow(1px 3px 4px rgb(177, 205, 251));
 }
 
 .fishy {
   font-size: 30px;
   margin-right: 70%;
+  
+}
+
+.auth-form-container {
+  /* background-color: #535bf2; */
+  /* background-image: url("https://giphy.com/embed/kErQolpzWlyLPTBf9J"); */
+  background-image: url("https://media0.giphy.com/media/kErQolpzWlyLPTBf9J/giphy.gif?cid=ecf05e47m0p6o3w3uwy0mxrw38oh3rn46y");
+  /* <iframe src="https://giphy.com/embed/kErQolpzWlyLPTBf9J" width="480" height="293" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/followfood-ocean-fish-followfish-kErQolpzWlyLPTBf9J">via GIPHY</a></p> */
+  background-repeat: repeat;
+}
+
+.posts {
+  border: 2px solid rgba(50, 101, 220, 0.6);
+  border-radius: 10px;
+  background-color: rgb(146, 220, 216);
+  filter: drop-shadow(1px 3px 4px rgb(177, 205, 251));
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  margin-left: 25%;
+  margin-bottom: 10px;
+}
+
+.update-btn {
+  padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(45deg, #00f0f8, #7d2ae8);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      margin: 5px;
+}
+
+.delete-btn {
+  padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(45deg, #00f0f8, #7d2ae8);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      margin: 5px;
+}
+
+.text-bar {
+  padding: 10px;
+      font-size: 16px;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      outline: none;
+      width: 250px;
+      transition: border-color 0.3s ease;
+}
+
+.post-msg {
+  padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.message-container {
+  background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmFyanY0eWNyamV3dXg0b3R1OTJyY2hwcncxMmhnM3dmcHd6cTcyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LmOrgjV7s6sAWuwKxc/giphy.gif");
+  background-size: cover;
 }

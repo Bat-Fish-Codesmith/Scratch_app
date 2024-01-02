@@ -1,11 +1,14 @@
 const express = require('express');
-const app = express();
-const path = require('path');
-const apiRouter = require('./routes/api');
-const forumRouter = require('./routes/forum');
-//const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const { Client } = require('pg');
 
 const PORT = 3000;
+const app = express();
+
+const apiRouter = require('./routes/api');
+const forumRouter = require('./routes/forum');
+
+console.log('=> Server.js File has been loaded');
 
 //require controllers
 // const sessionController = require('./controllers/sessionController');
@@ -14,18 +17,21 @@ const PORT = 3000;
 //require routers
 // const requestRouter = require('./router/request');
 // const oauthRouter = require('./router/oauth');
-// const apiRouter = require('./router/api');
 
-console.log('do we make it to server');
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(cookieParser());
 
+app.use('/messages', forumRouter);
+app.use('/', apiRouter )
 
-//app.use('/', apiRouter);
-app.use('/forum', forumRouter);
+const connectionString = 'postgres://zndfsdcu:QJza_1T-n0KVS_un59eO-9LTzDy4Ll_a@drona.db.elephantsql.com/zndfsdcu';
 
+const client = new Client({
+  connectionString,
+});
+
+client.connect();
 // app.get('/api/forum', (req, res) => {
 //   public.query('SELECT * FROM messages', (error, results) => {
 //     if (error) {

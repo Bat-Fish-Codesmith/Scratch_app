@@ -15,7 +15,10 @@ import Register from "./components/Register.jsx"
 import './App.css'
 
 //logged in temp route
-const getLoggedIn = () => false;
+const getLoggedIn = async () => {
+  return localStorage.getItem("user") !== null;
+};
+
 
 const routerHome = createBrowserRouter([
   {
@@ -52,10 +55,9 @@ const routerHome = createBrowserRouter([
   }
 ])
 
-const App = (props) => {
+const App = () => {
     try{
       console.log("=> File App.jsx has loaded sucessfully")
-
     } catch (error) {
       console.log('ERROR: handleButton', 'err: ', error);
     }
@@ -63,7 +65,6 @@ const App = (props) => {
   return (
     <div>
       <React.StrictMode>
-        {/* <Navbar />  */}
         <RouterProvider router = {routerHome} />
       </React.StrictMode>
     </div>
