@@ -24,16 +24,17 @@ CREATE TABLE public.user (
 
 
 CREATE TABLE  public.post (
-	"user_id" varchar NOT NULL,
+	"message_id" serial NOT NULL,
+	-- "user_id" varchar NOT NULL,
 	"content" varchar NOT NULL,
 	"post_picture" bytea,
 	"fish_name" varchar,
 	"max_weight" float(2),
 	"max_length" float(2),
 	"total_likes" integer,
-  "created_at" TIMESTAMP NOT NULL,
+  "created_at" TIMESTAMP,
   "like_list" JSON,
-	CONSTRAINT "post_pk" PRIMARY KEY ("user_id")
+	CONSTRAINT "post_pk" PRIMARY KEY ("message_id")
 ) WITH (
   OIDS=FALSE
 );
@@ -50,6 +51,7 @@ CREATE TABLE  public.fish (
   OIDS=FALSE
 );
 
+-- ALTER TABLE public.user ADD CONSTRAINT "user_fk0" FOREIGN KEY ("user_id") REFERENCES  public.post("user_id");
 ALTER TABLE public.post ADD CONSTRAINT "post_fk0" FOREIGN KEY ("fish_name") REFERENCES  public.fish("fish_name");
 
 INSERT INTO public.fish VALUES ('Arrowtooth Flounder', 'https://www.fisheries.noaa.gov/s3/styles/media_375_x_250/s3/2022-07/640x427-Flounder-Arrowtooth-NOAAFisheries.png?itok=HW87FG4V', 'https://www.fisheries.noaa.gov/species/arrowtooth-flounder', 'Atheresthes stomias');
@@ -94,4 +96,4 @@ INSERT INTO public.fish VALUES ('Yellowtail Rockfish', 'https://www.fisheries.no
 
 
 -- psql -d <enter your elephant DB url here!> -f fish_postgres_create.sql
--- (bryces)psql -d postgres://gqgihwiz:Oc-5CC15oO2oxeUwaHM3HJkNzQ5sZC8y@drona.db.elephantsql.com/gqgihwiz -f fish_postgres_create.sql
+-- (bryces)psql -d postgres://zndfsdcu:QJza_1T-n0KVS_un59eO-9LTzDy4Ll_a@drona.db.elephantsql.com/zndfsdcu -f fish_postgres_create.sql

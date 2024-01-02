@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>
-      <h2>Welcome to the Fishing App!</h2>
-      <p>Discover the exciting world of fishing and connect with fellow anglers.</p>
+    <div className="welcome-container">
+      <h2 className="welcome-heading">Welcome to the Fishing App!</h2>
+      <p className="app-description">Discover the exciting world of fishing and connect with fellow anglers.</p>
       <div>
         <Link to="/Forum">
-          <button>Join the Chat</button>
+          <button className="join-chat-btn">Join the Chat</button>
         </Link>
-        <Link to="/fishinfo">
-          <button>Learn about Fish</button>
+        <Link to="/FishData">
+          <button className="learn-fish-btn">Learn about Fish</button>
         </Link>
       </div>
     </div>

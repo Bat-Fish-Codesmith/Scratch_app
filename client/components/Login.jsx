@@ -1,63 +1,73 @@
+/*** React Routing Imports ***/
 import React, { useEffect, useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, redirect, Link, Navigate } from 'react-router-dom';
+import Register from './Register';
 
-//Login Page - useState Login & HTML Components
+/*** React Pages ***/
+import Home from "./Home.jsx"
+
+/*** React Field Require***/
+const required = (value) => {
+  if(!value) {
+    return (
+      <div className="required-feedback">
+        This field is required!
+      </div>
+    )
+  }
+}
+
+/*** Login Page - useState Login & HTML Components ***/
 const Login = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  //const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loginFailed, setLoginFailed] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    try{
-      const request = {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({username, password})
-      };
-      console.log('=> Login.handleSubmit: username & password: read');
 
-      const reponse = await fetch('/api/login', request);
-      const data = await reponse.json();
+    const login = true;
 
-      console.log('=> Login.handleSubmit: username & password: verified');
-
-      if(data.verified) { 
-        console.log('=> Login.handleSubmit: home redirect initiated');
-        props.onFormSwitch('register');
-      }
+    try {
+      user = await login(e.target);
+      this.setUsername({ username });
     } catch (error) {
-      console.log('ERROR: Login.handleSubmit', 'err: ', error);
+      this.setError({ error });
     }
   };
 
   return (
     <div className="auth-form-container" style={{transitionDelay: '100ms'}} >
+      {user && (
+          <Navigate to="/home" replace={true} />
+        )}
       <form className="login-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          name = "username"
           placeholder="Username"
+          validations={[required]}
         />
         <input
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          name = "password"
           placeholder="Password"
+          validations={[required]}
         />
         <button 
           type="submit"
         >Login</button>
       </form>
-      <button
-        className="link-btn" 
-        onClick={() => props.onFormSwitch('register')}>
-          Dont have an account? Register here!
-      </button>
+        <Link to="/register">
+          <button className="link-btn">    
+            No account? Register here!
+          </button>
+        </Link>
     </div>
+    
   );
 };
+
 
 export default Login;

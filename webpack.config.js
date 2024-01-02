@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?/,
-        exclude: /node_modules/,
+        exclude: ['/node_modules/', '/client/mock_dbs/', '/fish_postgres_create/' ],
         use: {
           loader: 'babel-loader',
           options: {

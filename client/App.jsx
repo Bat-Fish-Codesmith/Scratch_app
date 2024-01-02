@@ -1,6 +1,6 @@
 /*** React Routing Imports ***/
 import * as React from 'react';
-import * as ReactDOM from 'react-dom/client';
+//npm import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, redirect } from 'react-router-dom';
 
 /*** React Pages***/
@@ -15,7 +15,7 @@ import Register from "./components/Register.jsx"
 import './App.css'
 
 //logged in temp route
-const getLoggedIn = () => true;
+const getLoggedIn = () => false;
 
 const routerHome = createBrowserRouter([
   {
@@ -32,7 +32,7 @@ const routerHome = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <div><Home /></div>
+    element: <div><Navbar /> <Home /></div>
   }, 
   {
     path: "/login",
@@ -40,7 +40,7 @@ const routerHome = createBrowserRouter([
   },
   {
     path: "/forum",
-    element: <div><Forum /></div>
+    element: <div><Navbar /> <Forum /></div>
   },
   {
     path: "/register",
@@ -48,13 +48,13 @@ const routerHome = createBrowserRouter([
   },
   {
     path: "/fishdata",
-    element: <div><FishData /></div>
+    element: <div><Navbar /> <FishData /></div>
   }
 ])
 
 const App = (props) => {
     try{
-      console.log("hello")
+      console.log("=> File App.jsx has loaded sucessfully")
 
     } catch (error) {
       console.log('ERROR: handleButton', 'err: ', error);
@@ -63,6 +63,7 @@ const App = (props) => {
   return (
     <div>
       <React.StrictMode>
+        {/* <Navbar />  */}
         <RouterProvider router = {routerHome} />
       </React.StrictMode>
     </div>
