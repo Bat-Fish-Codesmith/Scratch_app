@@ -1,5 +1,5 @@
-const { Session } = require('../models/userModel');
-const mongoose = require('mongoose');
+const { Session } = require('../models/fishModel');
+//const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 

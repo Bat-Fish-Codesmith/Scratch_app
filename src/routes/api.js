@@ -13,8 +13,22 @@ router.get('/api', userController.login, cookieController.setCookie, sessionCont
 );
 
 //login page invokes sessions, cookies, and login when invoked.
-router.post('/login', userController.login, sessionController.startSession, cookieController.setCookie,  (req, res) => 
-  res.status(200).send('=> passing through router.post/login')
+router.post('/auth', userController.login,  (req, res) => 
+  res.status(200).json(res.locals.token)
+);
+
+router.post('/verify', userController.verify, (req, res) => 
+  res.status(200).json(res.locals.verify)
+);
+
+router.post('/checkaccount', userController.checkAccount, (req, res) => 
+  res.status(200).json({
+    status: res.locals.user.length === 1 ? "User exists" : "User does not exist", userExists: user.length === 1
+})
+);
+
+router.get('/forum', userController.forum,  (req, res) => 
+  res.status(200).redirect('../client/components/Forum.jsx') //.send('=> passing through router.post/forum')
 );
 
 //registration page verifies user to be logged in and redirects to home. 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 
 //Registration Page - useState Registration & HTML Components
 
@@ -20,8 +20,8 @@ const Register = (props) => {
       };
       console.log('=> Login.handleSubmit: username & password: read');
       
-      const reponse = await fetch('/api/register', reqOpts);
-      const data = await reponse.json();
+      const response = await fetch('/api/register', reqOpts);
+      const data = await response.json();
 
       console.log('=> Login.handleSubmit: username & password: verified');
 
@@ -38,32 +38,38 @@ const Register = (props) => {
 
   return (
     <div className="auth-form-container">
+      <h1 className="title">WeLikeFish</h1>
       <form className="register-form" onSubmit={handleSubmit}>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
+          className={"inputBox"}
         />
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
+          className={"inputBox"}
         />
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          className={"inputBox"}
         />
-        <button type="submit"
-          onSubmit={() => props.onFormSwitch('home')}
+        <button 
+          type="submit"
         >Register</button>
       </form>
-      <button2 
-        className="link-btn" 
-        onClick={() => props.onFormSwitch('login')}>I made a terrible mistake, I have an account!</button2>
+        <Link to="/login">
+          <button className="link-btn">    
+            This is Fishy, I have an account!
+          </button>
+        </Link>
     </div>
   );
 };

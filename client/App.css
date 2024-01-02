@@ -1,6 +1,84 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* width: 1000px; */
+
+  /* max-width: 1280px; */
+  margin: 0;
+
+  padding: 0;
   text-align: center;
+  flex: display;
+  flex-direction: column;
+}
+.auth-form-container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 70px;
+  color: rgb(177, 205, 251);
+  /* filter: drop-shadow(10px 10px 3px #000000); */
+  filter: drop-shadow(1px 2px 4px #000000);
+  
+}
+
+.login-form > .errorLabel {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  color: red;
+  font-size: 12px;
+}
+
+.link-btn {
+  z-index: 10;
+  box-shadow: none;
+  background: none;
+  color: var(--accent);
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: smaller;
+}
+
+.inputBox {
+  flex-direction: column;
+  display: flex;
+  height: 48px;
+  width: 400px;
+  font-size: large;
+  border-radius: 8px;
+  border: 1px solid grey;
+  padding-left: 8px;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="submit"] {
+    flex: display;
+    flex-direction: column;
+    color: white;
+    padding: 12px 24px;
+    margin: 8px;
+    font-size: 24px;
+    border-radius: 8px;
+    cursor: pointer;
 }

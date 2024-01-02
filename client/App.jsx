@@ -1,57 +1,99 @@
-import React from 'react';
-import { useState } from 'react'
+/*** React Routing Imports ***/
+import * as React from 'react';
+//npm import * as ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider, redirect } from 'react-router-dom';
+
+/*** React Pages***/
+import Forum from "./components/Forum.jsx"
+import Home from "./components/Home.jsx"
+import FishData from "./components/FishData.jsx"
+import Login from "./components/Login.jsx"
+import Navbar from "./components/Navbar.jsx"
+import Register from "./components/Register.jsx"
+
+/*** Styling Pages***/
 import './App.css'
-import Login from '../client/Login.jsx';
-import Register from '../client/Register.jsx';
-import { BrowserRouter as Router } from 'react-router-dom';
-//need to import the BrowserRouter, Route, Link from react-router-dom
-//need to import Navbar file if we have it in a separate file
-//need to import Home page file if in separate file
-//need to import Login page if in separate file
-//need to import Register page if in separate file 
-//need to import Feed file if in separate file
-//need to import Messaging file if in separate file
-//import Chat if in separate file
 
-// function App() {
-//   const [count, setCount] = useState(0)
+//logged in temp route
+const getLoggedIn = async () => {
+  return localStorage.getItem("user") !== null;
+};
 
-//   return (
 
-// }
+const routerHome = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    loader: async () => {
+      const loggedIn = await getLoggedIn();
+
+      if(!loggedIn) {
+        return redirect("/login");
+      }
+      return null;
+    }
+  },
+  {
+    path: "/home",
+    element: <div><Navbar /> <Home /></div>
+  }, 
+  {
+    path: "/login",
+    element: <div><Login /></div>
+  },
+  {
+    path: "/forum",
+    element: <div><Navbar /> <Forum /></div>
+  },
+  {
+    path: "/register",
+    element: <div><Register /></div>
+  },
+  {
+    path: "/fishdata",
+    element: <div><Navbar /> <FishData /></div>
+  }
+])
 
 const App = () => {
-
-  //routing login 
-  const [currentForm, setCurrentForm] = useState('login');
-
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  };
-
+    try{
+      console.log("=> File App.jsx has loaded sucessfully")
+    } catch (error) {
+      console.log('ERROR: handleButton', 'err: ', error);
+    }
+  
   return (
-    <Router>
     <div>
-        <h1>hello!</h1>
-        {/* <Navbar /> */}
-        {/* <Router path="/home" exact component={Home} /> */}
-        <Login />
-        {/* <Router path="/login" component={Login} />
-        <Router path="/register" component={Register} /> */}
-        {/* <Route path="/feed" component={Feed} />
-        <Route path="/messaging" component={Messaging} />
-        <Route path="/chat"  component={Chat} />
-      <div>
-      <Link to="/login"><button>Login</button></Link>
-      <Link to="/register"><button>Login</button></Link>
-      <Link to="/feed"><button>Login</button></Link>
-      <Link to="/messaging"><button>Login</button></Link>
-      <Link to="/chat"><button>Login</button></Link>
-      </div> */}
-       </div>
-      </Router>
-  );
+      <React.StrictMode>
+        <RouterProvider router = {routerHome} />
+      </React.StrictMode>
+    </div>
+
+);
 };
 
 
 export default App;
+
+// <Router>
+//   <Route path="/forum" element= {<Forum />}/>
+// </Router>
+/* // <BrowserRouter>
+<Forum />
+//   <div>
+//     <Navbar />
+//     <Route path="/" exact component={Home} />
+//     <Route path="/login" component={Login} />
+//     <Route path="/register" component={Register} />
+//     <Route path="/feed" component={Feed} />
+//     <Route path="/messaging" component={Messaging} />
+//     <Route path="/chat"  component={Chat} />
+//     <div>
+//       <Link to="/login"><button>Login</button></Link>
+//       <Link to="/register"><button>Login</button></Link>
+//       <Link to="/feed"><button>Login</button></Link>
+//       <Link to="/messaging"><button>Login</button></Link>
+//       <Link to="/chat"><button>Login</button></Link>
+//     </div>
+//   </div>
+// </BrowserRouter>       */

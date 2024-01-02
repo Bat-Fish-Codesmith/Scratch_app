@@ -1,0 +1,20 @@
+[
+  {
+    "fish_name": "Arrowtooth Flounder",
+    "fish_picture": "https://www.fisheries.noaa.gov/s3/styles/media_375_x_250/s3/2022-07/640x427-Flounder-Arrowtooth-NOAAFisheries.png?itok=HW87FG4V",
+    "information": "https://www.fisheries.noaa.gov/species/arrowtooth-flounder",
+    "scientific_name": "Atheresthes stomias"
+  },
+  {
+    "fish_name": "Bocaccio",
+    "fish_picture": "https://www.fisheries.noaa.gov/s3/styles/media_375_x_250/s3/dam-migration/640x427-bocaccio.jpg?itok=tFRg8DQu",
+    "information": "https://www.fisheries.noaa.gov/species/bocaccio",
+    "scientific_name": "Sebastes paucispinis"
+  },
+  {
+    "fish_name": "Canary Rockfish",
+    "fish_picture": "https://www.fisheries.noaa.gov/s3/styles/media_375_x_250/s3/dam-migration/640x427-canary_rockfish.png?itok=_J9UuDvK",
+    "information": "https://www.fisheries.noaa.gov/species/canary-rockfish",
+    "scientific_name": "Sebastes pinniger"
+  }
+]
